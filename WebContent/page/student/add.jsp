@@ -1,12 +1,16 @@
 <%@page contentType="text/html; charset=utf-8" %>
+<% 
+   String path = request.getContextPath(); 
+   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%> 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>新增</title>
-		<link rel="stylesheet" href="../static/css/styles.css" />
-		<link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css" />
-		<script src="../static/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="<%=basePath%>static/css/styles.css" />
+		<link rel="stylesheet" href="<%=basePath%>static/css/font-awesome-4.7.0/css/font-awesome.min.css" />
+		<script src="<%=basePath%>static/js/jquery-3.4.1.min.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="add">

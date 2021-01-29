@@ -1,12 +1,17 @@
 <%@page contentType="text/html; charset=utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% 
+   String path = request.getContextPath(); 
+   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%> 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title>系统首页</title>
-		<link rel="stylesheet" href="static/css/styles.css" />
-		<link rel="stylesheet" href="static/css/font-awesome-4.7.0/css/font-awesome.min.css" />
-		<script src="static/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="<%=basePath%>static/css/styles.css" />
+		<link rel="stylesheet" href="<%=basePath%>static/css/font-awesome-4.7.0/css/font-awesome.min.css" />
+		<script src="<%=basePath%>static/js/jquery-3.4.1.min.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(function() {
 				$('.menux p').click(function() {
@@ -16,6 +21,11 @@
 				$('.menux ul a').click(function() {
 					$('iframe').attr("src",$(this).attr("url"))
 					$('.menu_title').html($(this).attr("title"))
+				});
+				$('.logout').click(function(){
+					if(window.confirm("确定要退出吗？")){
+						window.location.href = "logout"
+					}
 				});
 			})
 		</script>
@@ -30,7 +40,7 @@
 				<ul>
 					<li><a href="javascript:void(0);">修改密码</a></li>
 					<li><a href="javascript:void(0);">个人信息</a></li>
-					<li><a href="javascript:void(0);">退出登录</a></li>
+					<li><a href="javascript:void(0);" class="logout">退出登录</a></li>
 				</ul>
 			</div>
 		</div>
@@ -40,6 +50,7 @@
 				系统功能
 			</div>
 			<div class="menux">
+			<c:if test="${type==2}">
 				<p>
 					<i class="fa fa-info-circle"></i>
 					<i class="fa fa-angle-right point"></i>
@@ -47,7 +58,7 @@
 				</p>
 				<ul>
 					<li>
-						<a href="javascript:void(0);" url="tmp/list.jsp" title="子功能1">
+						<a href="javascript:void(0);" url="<%=basePath%>student?method=list" title="子功能1">
 							<i class="fa fa-caret-right"></i>
 							学生管理
 						</a>
@@ -71,6 +82,8 @@
 						</a>
 					</li>
 				</ul>
+			</c:if>
+			<c:if test="${type==1}">
 				<p>
 					<i class="fa fa-info-circle"></i>
 					<i class="fa fa-angle-right point"></i>
@@ -78,7 +91,7 @@
 				</p>
 				<ul>
 					<li>
-						<a href="javascript:void(0);" url="tmp/list.jsp" title="子功能1">
+						<a href="javascript:void(0);" url="<%=basePath%>student?method=list" title="子功能1">
 							<i class="fa fa-caret-right"></i>
 							评分管理
 						</a>
@@ -90,6 +103,8 @@
 						</a>
 					</li>	
 				</ul>
+			</c:if>
+				<c:if test="${type==0}">
 				<p>
 					<i class="fa fa-info-circle"></i>
 					<i class="fa fa-angle-right point"></i>
@@ -97,7 +112,7 @@
 				</p>
 				<ul>
 					<li>
-						<a href="javascript:void(0);" url="tmp/list.jsp" title="子功能1">
+						<a href="javascript:void(0);" url="<%=basePath%>student?method=list" title="子功能1">
 							<i class="fa fa-caret-right"></i>
 							选课
 						</a>
@@ -109,6 +124,7 @@
 						</a>
 					</li>			
 				</ul>
+			</c:if>
 			</div>
 		</div>
 		<div class="main">
@@ -116,7 +132,7 @@
 				<i class="fa fa-home"></i>
 				<span class="menu_title">用户管理</span>
 			</div>
-			<iframe src="tmp/add.jsp" width="100%" height="90%" frameborder="0px"></iframe>
+			<iframe src="page/student/add.jsp" width="100%" height="90%" frameborder="0px"></iframe>
 		</div>
 	</body>
 </html>
