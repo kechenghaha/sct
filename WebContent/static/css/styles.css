@@ -264,7 +264,9 @@ body {
 }
 .tableadd{
 	width: 100%;
-	margin: 5px;
+	margin-top: 50px;
+	margin-left: 600px;
+	
 }
 .tableadd td{
 	height: 35px;

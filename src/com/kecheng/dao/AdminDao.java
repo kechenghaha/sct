@@ -9,7 +9,6 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.kecheng.entity.Admin;
 import com.kecheng.utils.PropertiesUtils;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class AdminDao {
 	public void add(Admin admin) throws SQLException {

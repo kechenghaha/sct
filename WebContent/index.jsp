@@ -26,7 +26,7 @@
 					if(window.confirm("确定要退出吗？")){
 						window.location.href = "logout"
 					}
-				});
+				}); 
 			})
 		</script>
 	</head>
@@ -58,25 +58,25 @@
 				</p>
 				<ul>
 					<li>
-						<a href="javascript:void(0);" url="<%=basePath%>student?method=list" title="子功能1">
+						<a href="javascript:void(0);" url="<%=basePath%>student?method=list" title="学生管理">
 							<i class="fa fa-caret-right"></i>
 							学生管理
 						</a>
 					</li>
 					<li>
-						<a href="javascript:void(0);" url="2.html" title="子功能2">
+						<a href="javascript:void(0);" url="2.html" title="老师管理">
 							<i class="fa fa-caret-right"></i>
 							老师管理
 						</a>
 					</li>
 					<li>
-						<a href="javascript:void(0);" url="3.html" title="子功能3">
+						<a href="javascript:void(0);" url="3.html" title="课程管理">
 							<i class="fa fa-caret-right"></i>
 							课程管理
 						</a>
 					</li>
 					<li>
-						<a href="javascript:void(0);" url="3.html" title="子功能4">
+						<a href="javascript:void(0);" url="3.html" title="查询统计">
 							<i class="fa fa-caret-right"></i>
 							查询统计
 						</a>
@@ -91,13 +91,13 @@
 				</p>
 				<ul>
 					<li>
-						<a href="javascript:void(0);" url="<%=basePath%>student?method=list" title="子功能1">
+						<a href="javascript:void(0);" url="1.html" title="评分管理">
 							<i class="fa fa-caret-right"></i>
 							评分管理
 						</a>
 					</li>
 					<li>
-						<a href="javascript:void(0);" url="2.html" title="子功能2">
+						<a href="javascript:void(0);" url="2.html" title="查询统计">
 							<i class="fa fa-caret-right"></i>
 							查询统计
 						</a>
@@ -112,13 +112,13 @@
 				</p>
 				<ul>
 					<li>
-						<a href="javascript:void(0);" url="<%=basePath%>student?method=list" title="子功能1">
+						<a href="javascript:void(0);" url="1.html" title="选课">
 							<i class="fa fa-caret-right"></i>
 							选课
 						</a>
 					</li>
 					<li>
-						<a href="javascript:void(0);" url="2.html" title="子功能2">
+						<a href="javascript:void(0);" url="2.html" title="查询统计">
 							<i class="fa fa-caret-right"></i>
 							查询统计
 						</a>

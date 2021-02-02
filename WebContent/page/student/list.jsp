@@ -15,8 +15,8 @@
 	</head>
 	<body>
 		<div class="condition">
-			用户名：<input type="text">
-			用户名：<input type="text">
+			学号：<input type="text">
+			姓名：<input type="text">
 			<button>
 				<i class="fa fa-search"></i>
 				查询
@@ -41,7 +41,7 @@
 				<td>${student.stuName}</td>
 				<td>${student.stuNo}</td>
 				<td>
-					<button class="edit">
+					<button class="edit" type="button" onclick="window.location.href='<%=basePath%>student?method=update’">
 						<i class="fa fa-edit"></i>
 						修改
 					</button>
@@ -60,7 +60,7 @@
 				<button>上一页</button>
 				<button>下一页</button>
 				<button>尾页</button>
-				<input type="text" class="page-no" name="pageNo" />
+				<input type="text" class="page-no" name="pageNo">
 				<button>转</button>
 			</td>
 		</table>
